@@ -30,20 +30,18 @@ enum UDPCommand: String, CaseIterable {
             return .orange
         }
     }
+    
+    var packetData: Data? {
+        return self.rawValue.data(using: .utf8)
+    }
 }
 
 final class ViewController: UIViewController {
     
-    var broadcast: UDPBroadcastConnection?
+    var connection: NWConnection?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        broadcast = try? UDPBroadcastConnection(port: 8422, handler: { (address, port, response) in
-            print("Received response: \(response) from \(address) \(port)")
-        }, errorHandler: { (error) in
-            print("error sending broadcast \(error)")
-        })
     
         var buttons: [UIButton] = []
         
@@ -70,6 +68,8 @@ final class ViewController: UIViewController {
             view.leadingAnchor.constraint(equalTo: stack.leadingAnchor),
             view.trailingAnchor.constraint(equalTo: stack.trailingAnchor),
             ])
+        
+        setupConnection()
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -78,16 +78,17 @@ final class ViewController: UIViewController {
 }
 
 private extension ViewController {
+    func setupConnection() {
+        connection = NWConnection(host: NWEndpoint.Host("raspberrypi.local"), port: 8422, using: .udp)
+        connection?.start(queue: .main)
+    }
+    
     @objc func tappedButton(_ sender: UIButton) {
         let command = UDPCommand.allCases[sender.tag]
         
         print("sending command: \(command)")
-
-        do {
-            try broadcast?.sendBroadcast(command.rawValue)
-        } catch {
-            print("error sending command: \(error)")
-        }
+        
+        connection?.send(content: command.packetData, completion: .idempotent)
     }
 }
 

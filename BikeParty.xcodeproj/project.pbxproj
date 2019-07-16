@@ -12,8 +12,6 @@
 		D977B81422D9654F002B4DB9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D977B81222D9654F002B4DB9 /* Main.storyboard */; };
 		D977B81622D96551002B4DB9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D977B81522D96551002B4DB9 /* Assets.xcassets */; };
 		D977B81922D96551002B4DB9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D977B81722D96551002B4DB9 /* LaunchScreen.storyboard */; };
-		D977B82222D969E6002B4DB9 /* UDPBroadcastConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D977B82022D969E6002B4DB9 /* UDPBroadcastConnection.swift */; };
-		D977B82322D969E6002B4DB9 /* UDPBroadcastConnectionError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D977B82122D969E6002B4DB9 /* UDPBroadcastConnectionError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,8 +22,6 @@
 		D977B81522D96551002B4DB9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D977B81822D96551002B4DB9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D977B81A22D96551002B4DB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D977B82022D969E6002B4DB9 /* UDPBroadcastConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UDPBroadcastConnection.swift; sourceTree = "<group>"; };
-		D977B82122D969E6002B4DB9 /* UDPBroadcastConnectionError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UDPBroadcastConnectionError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,8 +54,6 @@
 		D977B80D22D9654F002B4DB9 /* BikeParty */ = {
 			isa = PBXGroup;
 			children = (
-				D977B82022D969E6002B4DB9 /* UDPBroadcastConnection.swift */,
-				D977B82122D969E6002B4DB9 /* UDPBroadcastConnectionError.swift */,
 				D977B80E22D9654F002B4DB9 /* AppDelegate.swift */,
 				D977B81022D9654F002B4DB9 /* ViewController.swift */,
 				D977B81222D9654F002B4DB9 /* Main.storyboard */,
@@ -143,8 +137,6 @@
 			files = (
 				D977B81122D9654F002B4DB9 /* ViewController.swift in Sources */,
 				D977B80F22D9654F002B4DB9 /* AppDelegate.swift in Sources */,
-				D977B82322D969E6002B4DB9 /* UDPBroadcastConnectionError.swift in Sources */,
-				D977B82222D969E6002B4DB9 /* UDPBroadcastConnection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
